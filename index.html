@@ -166,8 +166,9 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       transition: all 0.4s var(--ease-out-expo);
     }
+    
     .nav-logo { 
-      display: flex; align-items: center; justify-content: center; height: 28px; 
+      display: flex; align-items: center; justify-content: center; height: 28px; text-decoration: none;
     }
     .nav-logo img {
       height: 100%; width: auto; object-fit: contain; transition: filter 0.3s;
@@ -430,7 +431,9 @@
   <div class="nav-wrapper" id="nav">
     <nav class="navbar">
       <a href="#home" class="nav-logo magnetic">
-        <img src="logo.png" alt="Siddhartha Shukla Logo">
+        <!-- Robust image fallback ensures the site never looks broken if the file is missing -->
+        <img src="logo.png" alt="Siddhartha Shukla Logo" onerror="this.onerror=null; this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+        <span id="logo-fallback" style="display: none; font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--text-primary);">SS.</span>
       </a>
       <div class="nav-links">
         <a href="#about" class="magnetic">About</a>
