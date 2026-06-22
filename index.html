@@ -1,112 +1,865 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* CSS Styling */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #ffffff;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 1px solid #eaeaea;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: #111;
-        }
-        p.subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card {
-            background: #fff;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-            margin-top: 0;
-        }
-        .skills-list {
-            display: flex;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        .skills-list li {
-            background: #eef2f5;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-            color: #777;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddhartha Shukla | Mechanical Engineer</title>
+  <meta name="description" content="Portfolio of Siddhartha Shukla — Mechanical Engineering student at MMMUT Gorakhpur, specializing in CAD/CAM, simulation, and automotive design.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesque@800,500,700,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       01. CSS VARIABLES & THEME TOKENS
+       ========================================================= */
+    :root {
+      /* Dark Theme (Default) */
+      --bg-base: #000000;
+      --bg-surface: #0a0a0a;
+      --bg-surface-elevated: rgba(20, 20, 20, 0.6);
+      --text-primary: #ffffff;
+      --text-secondary: #888888;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.2);
+      --accent: #F47C2B;
+      --accent-glow: rgba(244, 124, 43, 0.4);
+      --glass-bg: rgba(10, 10, 10, 0.5);
+      --glass-border: rgba(255, 255, 255, 0.05);
+      
+      --mesh-1: #1E3A5F;
+      --mesh-2: #F47C2B;
+      --mesh-3: #111111;
+
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-display: 'Cabinet Grotesque', sans-serif;
+      
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f9f9f9;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: rgba(255, 255, 255, 0.8);
+      --text-primary: #111111;
+      --text-secondary: #666666;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(0, 0, 0, 0.2);
+      --accent: #e16a18;
+      --accent-glow: rgba(225, 106, 24, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.6);
+      --glass-border: rgba(0, 0, 0, 0.05);
+      
+      --mesh-1: #dbeafe;
+      --mesh-2: #ffedd5;
+      --mesh-3: #ffffff;
+    }
+
+    /* =========================================================
+       02. RESET & BASE
+       ========================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html {
+      scroll-behavior: initial; /* Lenis handles smooth scroll */
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none; /* Custom cursor */
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 5vw;
+    }
+
+    /* =========================================================
+       03. CUSTOM CURSOR
+       ========================================================= */
+    .cursor-dot {
+      position: fixed;
+      top: 0; left: 0;
+      width: 8px; height: 8px;
+      background: var(--text-primary);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      transition: width 0.3s, height 0.3s, background-color 0.3s;
+    }
+    .cursor-outline {
+      position: fixed;
+      top: 0; left: 0;
+      width: 40px; height: 40px;
+      border: 1px solid var(--border-hover);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9998;
+      transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+    }
+    
+    /* Hover states for cursor */
+    body:has(a:hover, button:hover, .magnetic:hover) .cursor-dot {
+      width: 12px; height: 12px; background: var(--accent);
+    }
+    body:has(a:hover, button:hover, .magnetic:hover) .cursor-outline {
+      width: 60px; height: 60px; border-color: var(--accent-glow); background: rgba(244,124,43,0.05);
+    }
+
+    /* =========================================================
+       04. BACKGROUND EFFECTS (NOISE & MESH)
+       ========================================================= */
+    .noise {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 9000; opacity: 0.03;
+      background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    }
+    
+    .bg-mesh {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -2; overflow: hidden; pointer-events: none;
+    }
+    .mesh-blob {
+      position: absolute; border-radius: 50%; filter: blur(120px);
+      opacity: 0.4; mix-blend-mode: normal; animation: float 20s infinite ease-in-out alternate;
+    }
+    .blob-1 { background: var(--mesh-1); width: 50vw; height: 50vw; top: -10%; left: -10%; }
+    .blob-2 { background: var(--mesh-2); width: 40vw; height: 40vw; bottom: -10%; right: -10%; animation-delay: -5s; }
+    .blob-3 { background: var(--mesh-3); width: 30vw; height: 30vw; top: 40%; left: 40%; animation-delay: -10s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(10vw, 10vh) scale(1.1); }
+    }
+
+    .grid-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;
+      background-image: 
+        linear-gradient(var(--border-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    /* =========================================================
+       05. NAVIGATION
+       ========================================================= */
+    .nav-wrapper {
+      position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+      z-index: 100; width: 90%; max-width: 800px;
+    }
+    .navbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; position: relative; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%) scaleX(0);
+      width: 100%; height: 2px; background: var(--accent); transition: transform 0.3s var(--ease-out-expo);
+      transform-origin: center;
+    }
+    .nav-links a:hover::after { transform: translateX(-50%) scaleX(1); }
+    
+    .nav-actions { display: flex; gap: 16px; align-items: center; }
+    .theme-btn {
+      background: transparent; border: none; color: var(--text-primary);
+      cursor: none; font-size: 1.1rem; padding: 8px; transition: transform 0.3s;
+    }
+    .theme-btn:hover { transform: rotate(15deg) scale(1.1); color: var(--accent); }
+
+    /* =========================================================
+       06. HERO SECTION
+       ========================================================= */
+    .hero {
+      position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding-top: 80px; overflow: hidden;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 1000px; display: flex; flex-direction: column; align-items: center; }
+    
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 100px;
+      background: var(--bg-surface-elevated); border: 1px solid var(--border-color);
+      font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 32px; backdrop-filter: blur(10px);
+    }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); animation: pulse 2s infinite; }
+    
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--accent-glow); } 70% { box-shadow: 0 0 0 10px rgba(244,124,43,0); } 100% { box-shadow: 0 0 0 0 rgba(244,124,43,0); } }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+      line-height: 1;
+      background: linear-gradient(180deg, var(--text-primary) 0%, rgba(255,255,255,0.4) 100%);
+      [data-theme="light"] & { background: linear-gradient(180deg, var(--text-primary) 0%, rgba(0,0,0,0.5) 100%); }
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+      color: var(--text-secondary); font-weight: 400; max-width: 600px; margin-bottom: 48px;
+    }
+
+    .btn-group { display: flex; gap: 16px; justify-content: center; }
+    .btn {
+      padding: 16px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem;
+      display: inline-flex; align-items: center; gap: 10px; cursor: none;
+      transition: all 0.3s var(--ease-out-expo); position: relative; overflow: hidden;
+    }
+    .btn-primary {
+      background: var(--text-primary); color: var(--bg-base);
+      border: 1px solid transparent; box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    }
+    .btn-primary:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 10px 40px rgba(255,255,255,0.2); }
+    .btn-secondary {
+      background: var(--glass-bg); color: var(--text-primary);
+      border: 1px solid var(--border-color); backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover { border-color: var(--text-primary); transform: translateY(-4px) scale(1.02); }
+
+    .scroll-indicator {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary);
+      opacity: 0.6;
+    }
+    .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--text-secondary), transparent); }
+
+    /* =========================================================
+       07. SECTIONS & CARDS (Spotlight Effect)
+       ========================================================= */
+    section { padding: 120px 0; position: relative; }
+    
+    .section-header { margin-bottom: 80px; }
+    .section-label { color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: block; }
+    .section-title { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+
+    /* Spotlight Card Engine */
+    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color 0.5s, transform 0.5s var(--ease-out-expo);
+    }
+    .card::before {
+      content: ""; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: 1; opacity: 0;
+      background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--border-hover), transparent 40%);
+      transition: opacity 0.5s; pointer-events: none;
+    }
+    .card::after {
+      content: ""; height: calc(100% - 2px); width: calc(100% - 2px); position: absolute; left: 1px; top: 1px;
+      background: var(--bg-surface); border-radius: 23px; z-index: 2; pointer-events: none;
+    }
+    .card:hover::before { opacity: 1; }
+    .card:hover { transform: translateY(-8px); border-color: transparent; }
+    .card-content { position: relative; z-index: 3; display: flex; flex-direction: column; height: 100%; }
+
+    /* =========================================================
+       08. ABOUT & META
+       ========================================================= */
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); font-weight: 400; }
+    .about-text p { margin-bottom: 24px; }
+    .about-text strong { color: var(--text-primary); font-weight: 500; }
+    
+    .meta-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .meta-item { display: flex; align-items: center; gap: 16px; padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 16px; }
+    .meta-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--glass-bg); display: grid; place-items: center; color: var(--accent); font-size: 1.2rem; border: 1px solid var(--border-color); }
+    .meta-info span { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 4px; }
+    .meta-info strong { font-size: 1.1rem; color: var(--text-primary); }
+
+    /* =========================================================
+       09. EXPERIENCE & TIMELINE
+       ========================================================= */
+    .timeline { position: relative; padding-left: 48px; }
+    .timeline::before { content: ""; position: absolute; left: 24px; top: 0; bottom: 0; width: 1px; background: var(--border-color); }
+    .timeline-item { position: relative; margin-bottom: 64px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -48px; top: 0; width: 48px; height: 48px; display: grid; place-items: center; }
+    .timeline-dot::before { content: ""; width: 12px; height: 12px; background: var(--bg-base); border: 2px solid var(--accent); border-radius: 50%; position: relative; z-index: 2; transition: all 0.3s; }
+    .timeline-item:hover .timeline-dot::before { background: var(--accent); box-shadow: 0 0 15px var(--accent-glow); transform: scale(1.3); }
+    
+    .timeline-date { font-family: var(--font-display); color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+    .timeline-role { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; margin-bottom: 4px; }
+    .timeline-org { font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px; }
+    .timeline-desc li { position: relative; padding-left: 24px; margin-bottom: 12px; color: var(--text-secondary); }
+    .timeline-desc li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+    /* =========================================================
+       10. PROJECTS
+       ========================================================= */
+    .project-card .icon-wrapper { font-size: 2rem; color: var(--text-primary); margin-bottom: 24px; }
+    .project-card h3 { font-size: 1.8rem; margin-bottom: 8px; }
+    .project-card .subtitle { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 24px; }
+    .project-card p { color: var(--text-secondary); margin-bottom: 32px; flex-grow: 1; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .tech-pill { padding: 6px 14px; background: var(--glass-bg); border: 1px solid var(--border-color); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); }
+
+    /* =========================================================
+       11. SKILLS & COURSEWORK
+       ========================================================= */
+    .skills-wrapper { display: flex; flex-direction: column; gap: 40px; }
+    .skill-category h4 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .skill-category h4 i { color: var(--accent); }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill-item {
+      padding: 12px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px;
+      font-size: 0.95rem; font-weight: 500; color: var(--text-secondary);
+      transition: all 0.3s; cursor: none;
+    }
+    .skill-item:hover { border-color: var(--accent); color: var(--text-primary); background: var(--accent-glow); transform: translateY(-3px); }
+
+    /* =========================================================
+       12. EDUCATION & ACHIEVEMENTS (Combined Grid Layout)
+       ========================================================= */
+    .edu-achieve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .list-block { background: var(--bg-surface); padding: 40px; border-radius: 24px; border: 1px solid var(--border-color); }
+    .list-item { padding: 24px 0; border-bottom: 1px solid var(--border-color); }
+    .list-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .list-item:first-child { padding-top: 0; }
+    .list-item-title { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .list-item-sub { color: var(--text-secondary); font-size: 0.9rem; }
+    .list-item-meta { margin-top: 8px; display: inline-block; font-size: 0.8rem; padding: 4px 12px; background: var(--glass-bg); border-radius: 100px; color: var(--accent); font-weight: 600; border: 1px solid var(--border-color); }
+
+    /* =========================================================
+       13. CONTACT
+       ========================================================= */
+    .contact-section { text-align: center; padding: 160px 0; }
+    .contact-title { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 24px; }
+    .contact-text { font-size: 1.2rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto 48px; }
+    
+    .social-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 64px; }
+    .social-link {
+      width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--border-color); display: grid; place-items: center;
+      font-size: 1.5rem; color: var(--text-primary); transition: all 0.4s var(--ease-out-expo); cursor: none;
+    }
+    .social-link:hover { background: var(--text-primary); color: var(--bg-base); transform: scale(1.1); border-color: var(--text-primary); }
+
+    /* Form Design */
+    .contact-form { max-width: 600px; margin: 0 auto; text-align: left; }
+    .input-group { position: relative; margin-bottom: 32px; }
+    .input-group input, .input-group textarea {
+      width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-color);
+      padding: 16px 0; font-family: var(--font-body); font-size: 1.1rem; color: var(--text-primary);
+      transition: border-color 0.3s; resize: none;
+    }
+    .input-group input:focus, .input-group textarea:focus { outline: none; border-color: var(--accent); }
+    .input-group label { position: absolute; left: 0; top: 16px; color: var(--text-secondary); pointer-events: none; transition: all 0.3s var(--ease-out-expo); }
+    .input-group input:focus ~ label, .input-group input:valid ~ label,
+    .input-group textarea:focus ~ label, .input-group textarea:valid ~ label { top: -12px; font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+    .submit-btn { width: 100%; border-radius: 16px; justify-content: center; margin-top: 16px; font-size: 1.1rem; }
+
+    /* =========================================================
+       14. FOOTER
+       ========================================================= */
+    footer { padding: 40px 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+    .heart { color: var(--accent); display: inline-block; animation: beat 1s infinite; }
+    @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+    /* =========================================================
+       15. RESPONSIVE DESIGN
+       ========================================================= */
+    @media (max-width: 900px) {
+      .about-layout, .edu-achieve-grid { grid-template-columns: 1fr; gap: 48px; }
+      .nav-links { display: none; } /* Simplified for mobile, relying on scroll */
+      .nav-wrapper { width: 95%; top: 16px; }
+      .hero { padding-top: 100px; }
+      .timeline-dot { width: 32px; height: 32px; left: -40px; }
+      .timeline { padding-left: 32px; }
+      .timeline::before { left: 16px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Hello, I'm [Your Name]</h1>
-        <p class="subtitle">A passionate UI/UX Designer crafting user-centered digital experiences.</p>
-    </header>
+  <div class="noise"></div>
+  <div class="grid-overlay"></div>
+  <div class="bg-mesh">
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+  </div>
 
-    <div class="container">
-        <div class="card">
-            <h2>About Me</h2>
-            <p>I specialize in translating complex problems into intuitive, accessible, and visually clean interfaces. I believe in designing with empathy and relying on user research to drive my design decisions.</p>
-        </div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-        <div class="card">
-            <h2>Toolkit & Skills</h2>
-            <ul class="skills-list">
-                <li>Figma</li>
-                <li>Wireframing</li>
-                <li>Prototyping</li>
-                <li>User Research</li>
-                <li>Usability Testing</li>
-            </ul>
-        </div>
+  <div class="nav-wrapper" id="nav">
+    <nav class="navbar">
+      <div class="nav-logo magnetic">SS.</div>
+      <div class="nav-links">
+        <a href="#about" class="magnetic">About</a>
+        <a href="#experience" class="magnetic">Experience</a>
+        <a href="#projects" class="magnetic">Projects</a>
+        <a href="#skills" class="magnetic">Skills</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-btn magnetic" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
 
-        <div class="card">
-            <h2>Recent Case Studies</h2>
-            <p><strong>Project 1: E-Commerce App Redesign</strong><br>
-            Improved user checkout flow, resulting in a cleaner interface and faster task completion rates.</p>
-            <br>
-            <p><strong>Project 2: Mobile Dashboard</strong><br>
-            Designed a high-fidelity prototype for a financial tracking application emphasizing data visualization.</p>
-        </div>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="status-badge gs-reveal" data-delay="0.1">
+        <span class="status-dot"></span> Available for Internships
+      </div>
+      <h1 class="split-text">Siddhartha Shukla</h1>
+      <p class="hero-subtitle gs-reveal" data-delay="0.4">Mechanical Engineer · CAD/CAM · Simulation <br><i class="fa-solid fa-location-dot" style="font-size:0.8em; margin-right:8px;"></i>Gorakhpur, India</p>
+      
+      <div class="btn-group gs-reveal" data-delay="0.6">
+        <a href="https://drive.google.com/file/d/1tJiiEfj-dlFdIysnGjgpnt0Y-y31gOmA/view" target="_blank" class="btn btn-primary magnetic">
+          View Resume <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-secondary magnetic">
+          Contact Me
+        </a>
+      </div>
     </div>
+    
+    <div class="scroll-indicator gs-reveal" data-delay="1">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Let's build something great together. | <a href="mailto:your.email@example.com">Contact Me</a></p>
-    </footer>
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">01. About</span>
+        <h2 class="section-title split-text">Designing systems with precision & purpose.</h2>
+      </div>
+      
+      <div class="about-layout">
+        <div class="about-text gs-fade">
+          <p>I'm a pre-final year <strong>Mechanical Engineering</strong> student at MMMUT Gorakhpur with hands-on experience in CAD/CAM, simulation, and automotive engineering. My work spans designing high-performance mechanical systems, exploring UI/UX, and developing curiosity for machine learning.</p>
+          <p>Beyond academics, I'm active in SAE collegiate competitions and hold technical leadership roles — turning ideas into engineered solutions through teamwork, iteration, and a strong attention to detail.</p>
+        </div>
+        
+        <div class="meta-grid">
+          <div class="meta-item gs-fade">
+            <div class="meta-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="meta-info">
+              <span>Studying</span>
+              <strong>B.Tech Mechanical · MMMUT</strong>
+            </div>
+          </div>
+          <div class="meta-item gs-fade" style="transition-delay: 0.1s;">
+            <div class="meta-icon"><i class="fa-solid fa-gear"></i></div>
+            <div class="meta-info">
+              <span>Focus</span>
+              <strong>CAD/CAM, Simulation, Automotive</strong>
+            </div>
+          </div>
+          <div class="meta-item gs-fade" style="transition-delay: 0.2s;">
+            <div class="meta-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+            <div class="meta-info">
+              <span>Currently</span>
+              <strong>SAE Supra · Team Malaviyans</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">02. Experience</span>
+        <h2 class="section-title split-text">Where I've engineered.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item gs-fade">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Summer 2024</div>
+          <h3 class="timeline-role">Research Intern</h3>
+          <div class="timeline-org">Motilal Nehru National Institute of Technology (MNNIT), Allahabad</div>
+          <ul class="timeline-desc">
+            <li>Designed the steering knuckle upright geometry for an SAE Supra Formula-style racing car using SolidWorks.</li>
+            <li>Compared multiple materials for the knuckle to evaluate strength-to-weight performance under racing load conditions.</li>
+            <li>Performed topology optimization on the knuckle geometry to minimize mass while maintaining structural integrity — resulting in a lighter, more efficient component.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">03. Selected Work</span>
+        <h2 class="section-title split-text">Building the future.</h2>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card project-card gs-slide">
+          <div class="card-content">
+            <div class="icon-wrapper"><i class="fa-solid fa-car-side"></i></div>
+            <h3>SAE Supra</h3>
+            <div class="subtitle">Steering System Engineer · Team Malaviyans</div>
+            <p>National-level competition to design, build, and race Formula-style cars. Responsible for design, analysis, and optimization of the steering system. Collaborated with cross-functional sub-teams on engineering design, fabrication, and business presentation.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">SolidWorks</span>
+              <span class="tech-pill">Ansys</span>
+              <span class="tech-pill">Automotive</span>
+              <span class="tech-pill">CAD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card project-card gs-slide" style="transition-delay: 0.1s;">
+          <div class="card-content">
+            <div class="icon-wrapper"><i class="fa-solid fa-flask"></i></div>
+            <h3>Biodiesel Extractor</h3>
+            <div class="subtitle">Final Year Project (Ongoing)</div>
+            <p>Investigating production of biodiesel from chicken fat oil as a sustainable alternative fuel. Conducting performance and emission analysis to evaluate viability in internal combustion engines.</p>
+            <div class="tech-stack">
+              <span class="tech-pill">IC Engines</span>
+              <span class="tech-pill">MATLAB</span>
+              <span class="tech-pill">Sustainability</span>
+              <span class="tech-pill">Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">04. Arsenal</span>
+        <h2 class="section-title split-text">Tools & Capabilities.</h2>
+      </div>
+
+      <div class="skills-wrapper">
+        <div class="skill-category gs-fade">
+          <h4><i class="fa-solid fa-cube"></i> CAD & Simulation</h4>
+          <div class="skill-items">
+            <span class="skill-item">AutoCAD</span>
+            <span class="skill-item">SolidWorks</span>
+            <span class="skill-item">Ansys</span>
+            <span class="skill-item">MATLAB</span>
+          </div>
+        </div>
+        
+        <div class="skill-category gs-fade">
+          <h4><i class="fa-solid fa-pen-ruler"></i> Design & Productivity</h4>
+          <div class="skill-items">
+            <span class="skill-item">MS Word</span>
+            <span class="skill-item">Excel</span>
+            <span class="skill-item">PowerPoint</span>
+            <span class="skill-item">Canva</span>
+            <span class="skill-item">Adobe Photoshop</span>
+            <span class="skill-item">Figma</span>
+          </div>
+        </div>
+        
+        <div class="skill-category gs-fade">
+          <h4><i class="fa-solid fa-microchip"></i> Domain Knowledge</h4>
+          <div class="skill-items">
+            <span class="skill-item">CAD/CAM</span>
+            <span class="skill-item">UX/UI</span>
+            <span class="skill-item">Machine Learning</span>
+            <span class="skill-item">Simulation Software</span>
+          </div>
+        </div>
+
+        <div class="skill-category gs-fade">
+          <h4><i class="fa-solid fa-book-open"></i> Core Coursework</h4>
+          <div class="skill-items">
+            <span class="skill-item">Manufacturing Science</span>
+            <span class="skill-item">Additive Manufacturing</span>
+            <span class="skill-item">Engineering Mechanics</span>
+            <span class="skill-item">Strength of Materials</span>
+            <span class="skill-item">IC Engines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="edu-achieve-grid">
+        <div class="list-block gs-fade">
+          <span class="section-label" style="margin-bottom:32px;">05. Education</span>
+          
+          <div class="list-item">
+            <div class="list-item-title">B.Tech Mechanical Engineering</div>
+            <div class="list-item-sub">MMMUT, Gorakhpur</div>
+            <div class="list-item-meta">2023 - 2027</div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-title">Class XII — CBSE</div>
+            <div class="list-item-sub">Air Force School</div>
+            <div class="list-item-meta">2022</div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-title">Class X — CBSE</div>
+            <div class="list-item-sub">Air Force School</div>
+            <div class="list-item-meta">2020</div>
+          </div>
+        </div>
+
+        <div class="list-block gs-fade" style="transition-delay: 0.1s;">
+          <span class="section-label" style="margin-bottom:32px;">06. Leadership & Awards</span>
+          
+          <div class="list-item">
+            <div class="list-item-title">All India Rank 33</div>
+            <div class="list-item-sub">SAE Supra 2025 under Team Malaviyans</div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-title">Student Sponsorship & Alumni Chair</div>
+            <div class="list-item-sub">SAE Collegiate Club, MMMUT Chapter</div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-title">Event Coordinator</div>
+            <div class="list-item-sub">Intl. Conference on Advanced Design & T&P Cell Coordinator</div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-title">Silver Medal</div>
+            <div class="list-item-sub">International Mathematics Olympiad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="contact-title split-text">Let's build together.</h2>
+      <p class="contact-text gs-reveal">Open to internships, research collaborations, and engineering discussions. Drop a message.</p>
+
+      <div class="social-links gs-reveal">
+        <a href="mailto:siddhartha.shukla0401@gmail.com" class="social-link magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/siddhartha0401/" target="_blank" class="social-link magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="tel:+916387330339" class="social-link magnetic" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+
+      <form class="contact-form gs-reveal" id="contactForm">
+        <div class="input-group">
+          <input type="text" id="name" required>
+          <label for="name">Your Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" required>
+          <label for="email">Email Address</label>
+        </div>
+        <div class="input-group">
+          <textarea id="message" rows="4" required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn magnetic">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Siddhartha Shukla. Engineered with <span class="heart">♥</span> in India.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script>
+    /* =========================================================
+       INIT & SETUP
+       ========================================================= */
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Smooth Scrolling (Lenis)
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    // Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    // Smooth follow for outline
+    gsap.ticker.add(() => {
+      outlineX += (mouseX - outlineX) * 0.15;
+      outlineY += (mouseY - outlineY) * 0.15;
+      cursorOutline.style.left = `${outlineX}px`;
+      cursorOutline.style.top = `${outlineY}px`;
+    });
+
+    /* =========================================================
+       MICRO-INTERACTIONS
+       ========================================================= */
+    
+    // Magnetic Buttons & Elements
+    const magnetics = document.querySelectorAll('.magnetic');
+    magnetics.forEach((elem) => {
+      elem.addEventListener('mousemove', (e) => {
+        const rect = elem.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(elem, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
+      });
+      elem.addEventListener('mouseleave', () => {
+        gsap.to(elem, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" });
+      });
+    });
+
+    // Card Spotlight Engine
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    /* =========================================================
+       ANIMATIONS & SCROLL TRIGGER
+       ========================================================= */
+
+    // Navbar collapse on scroll
+    ScrollTrigger.create({
+      start: 'top -80',
+      end: 99999,
+      toggleClass: {className: 'scrolled', targets: '.navbar'}
+    });
+
+    // Text Reveal (SplitType)
+    const splitTypes = document.querySelectorAll('.split-text');
+    splitTypes.forEach((char, i) => {
+      const text = new SplitType(char, { types: 'chars, words' });
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: 'top 85%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 40,
+        rotateX: -90,
+        stagger: 0.02,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    });
+
+    // Hero Init Sequence
+    const heroTimeline = gsap.timeline();
+    heroTimeline.fromTo('.bg-mesh', {opacity: 0, scale: 1.2}, {opacity: 1, scale: 1, duration: 2, ease: "power2.out"})
+                .fromTo('.gs-reveal', {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out"}, "-=1.5");
+
+    // Standard Fade Elements
+    gsap.utils.toArray('.gs-fade').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 85%" },
+        opacity: 0, y: 30, duration: 1, ease: "power3.out"
+      });
+    });
+
+    // Card Slides
+    gsap.utils.toArray('.gs-slide').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 85%" },
+        opacity: 0, y: 60, duration: 1, ease: "expo.out"
+      });
+    });
+
+    /* =========================================================
+       THEME & FORM
+       ========================================================= */
+    const themeBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const icon = themeBtn.querySelector('i');
+
+    const toggleTheme = () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      
+      // Animate background color change smoothly
+      gsap.to('body', {
+        backgroundColor: getComputedStyle(root).getPropertyValue('--bg-base'),
+        color: getComputedStyle(root).getPropertyValue('--text-primary'),
+        duration: 0.5
+      });
+    };
+
+    themeBtn.addEventListener('click', toggleTheme);
+
+    // Form logic to mailto (keeps existing functionality)
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+      window.location.href = `mailto:siddhartha.shukla0401@gmail.com?subject=Portfolio Inquiry from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
