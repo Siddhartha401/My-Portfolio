@@ -3,738 +3,856 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siddhartha Shukla | Mechanical Engineer</title>
-  <meta name="description" content="Portfolio of Siddhartha Shukla — Mechanical Engineering student at MMMUT Gorakhpur, specializing in CAD/CAM, simulation, and automotive design.">
+  <title>Siddhartha Shukla | Engineer & Designer</title>
+  
+  <meta name="description" content="Portfolio of Siddhartha Shukla — Mechanical Engineer, UI/UX Designer, and Systems Thinker. Specializing in high-performance hardware and intuitive software.">
+  <meta name="keywords" content="Mechanical Engineer, UX Designer, CAD, SolidWorks, Figma, MMMUT, MNNIT, SAE Supra, Systems Architecture">
+  <meta name="author" content="Siddhartha Shukla">
+  <meta property="og:title" content="Siddhartha Shukla | Engineer & Designer">
+  <meta property="og:description" content="Engineering resilient hardware. Designing intuitive software. Bridging the gap between physical systems and human interaction.">
+  <meta property="og:type" content="website">
 
-  <!-- Fonts: Inter for precision, Cabinet Grotesque for display -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Siddhartha Shukla",
+    "jobTitle": "Mechanical Engineer & UX Designer",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Madan Mohan Malaviya University of Technology"
+    },
+    "url": "https://siddharthashukla.com"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesque@800,500,700,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     /* =========================================================
-       01. CSS VARIABLES & THEME TOKENS
+       01. ARCHITECTURE & TOKENS (Premium Restraint)
        ========================================================= */
     :root {
-      /* Dark Theme (Default) */
-      --bg-base: #000000;
+      --bg-base: #020202;
       --bg-surface: #0a0a0a;
-      --bg-surface-alt: #050505;
-      --bg-surface-elevated: rgba(20, 20, 20, 0.6);
-      --text-primary: #ffffff;
-      --text-secondary: #888888;
+      --bg-surface-hover: #121212;
+      --bg-panel: rgba(10, 10, 10, 0.6);
+      
+      --text-primary: #fcfcfc;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      
       --border-color: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(255, 255, 255, 0.2);
+      --border-strong: rgba(255, 255, 255, 0.15);
+      
       --accent: #F47C2B;
-      --accent-glow: rgba(244, 124, 43, 0.4);
-      --glass-bg: rgba(10, 10, 10, 0.5);
-      --glass-border: rgba(255, 255, 255, 0.05);
+      --accent-hover: #e16a18;
+      --accent-glow: rgba(244, 124, 43, 0.12);
       
-      --mesh-1: #1E3A5F;
-      --mesh-2: #F47C2B;
-      --mesh-3: #111111;
+      --glass-bg: rgba(5, 5, 5, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.06);
 
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --font-display: 'Cabinet Grotesque', sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
       
-      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: 0.35s var(--ease-out);
     }
 
     [data-theme="light"] {
-      --bg-base: #f9f9f9;
+      --bg-base: #f8f9fa;
       --bg-surface: #ffffff;
-      --bg-surface-alt: #f1f1f1;
-      --bg-surface-elevated: rgba(255, 255, 255, 0.8);
-      --text-primary: #111111;
-      --text-secondary: #666666;
-      --border-color: rgba(0, 0, 0, 0.08);
-      --border-hover: rgba(0, 0, 0, 0.2);
-      --accent: #e16a18;
-      --accent-glow: rgba(225, 106, 24, 0.2);
-      --glass-bg: rgba(255, 255, 255, 0.6);
-      --glass-border: rgba(0, 0, 0, 0.05);
+      --bg-surface-hover: #f1f3f5;
+      --bg-panel: rgba(255, 255, 255, 0.85);
       
-      --mesh-1: #dbeafe;
-      --mesh-2: #ffedd5;
-      --mesh-3: #ffffff;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.15);
+      
+      --accent: #d96214;
+      --accent-hover: #b84f0f;
+      --accent-glow: rgba(217, 98, 20, 0.08);
+      
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(0, 0, 0, 0.06);
     }
 
     /* =========================================================
-       02. RESET & BASE
+       02. BASE & RESET
        ========================================================= */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    html {
-      scroll-behavior: initial; /* Lenis handles smooth scroll */
+    html { 
+      scroll-behavior: initial; 
       overflow-x: hidden;
+      font-size: 16px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
       background-color: var(--bg-base);
       color: var(--text-primary);
-      font-family: var(--font-body);
-      line-height: 1.6;
+      font-family: var(--font-sans);
+      line-height: 1.7;
       overflow-x: hidden;
       transition: background-color 0.5s ease, color 0.5s ease;
     }
 
-    ::selection { background: var(--accent); color: #fff; }
+    ::selection { background: var(--accent); color: var(--bg-base); }
 
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
-    a { color: inherit; text-decoration: none; cursor: pointer; }
-    button { cursor: pointer; }
+    h1, h2, h3, h4 { font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; transition: var(--transition); outline: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; outline: none; }
     ul { list-style: none; }
-    img { max-width: 100%; display: block; }
+    img, video { max-width: 100%; display: block; border-radius: var(--radius-sm); }
     
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
     .container {
-      max-width: 1280px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 5vw;
+      padding: 0 6vw;
       position: relative;
       z-index: 2;
     }
 
+    /* Cinematic Typography Utilities */
+    .mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .text-body { font-size: 1.15rem; color: var(--text-secondary); max-width: 65ch; line-height: 1.8; }
+    .text-muted { color: var(--text-secondary); }
+    .accent-text { color: var(--accent); }
+
     /* =========================================================
-       03. BACKGROUND EFFECTS (NOISE, MESH & WATERMARKS)
+       03. SIGNATURE MOTIFS & LIGHTING
        ========================================================= */
-    .noise {
+    .blueprint-grid {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none; z-index: 9000; opacity: 0.03;
-      background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    }
-    
-    .bg-mesh {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -2; overflow: hidden; pointer-events: none;
-    }
-    .mesh-blob {
-      position: absolute; border-radius: 50%; filter: blur(120px);
-      opacity: 0.4; mix-blend-mode: normal; animation: float 20s infinite ease-in-out alternate;
-    }
-    .blob-1 { background: var(--mesh-1); width: 50vw; height: 50vw; top: -10%; left: -10%; }
-    .blob-2 { background: var(--mesh-2); width: 40vw; height: 40vw; bottom: -10%; right: -10%; animation-delay: -5s; }
-    .blob-3 { background: var(--mesh-3); width: 30vw; height: 30vw; top: 40%; left: 40%; animation-delay: -10s; }
-
-    @keyframes float {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(10vw, 10vh) scale(1.1); }
-    }
-
-    .grid-overlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;
+      z-index: 0; pointer-events: none; opacity: 0.25;
       background-image: 
         linear-gradient(var(--border-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
     }
 
-    .watermark {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-display);
-      font-size: 18vw;
-      font-weight: 800;
-      color: var(--text-primary);
-      opacity: 0.02;
-      pointer-events: none;
-      z-index: 0;
-      white-space: nowrap;
-      user-select: none;
+    .ambient-light {
+      position: fixed; top: -10%; left: 50%; transform: translateX(-50%);
+      width: 60vw; height: 60vh; border-radius: 50%;
+      background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 60%);
+      filter: blur(100px); z-index: 0; pointer-events: none;
     }
-    [data-theme="light"] .watermark { opacity: 0.04; }
+
+    /* Section Engineering Markers */
+    .crosshair-node { position: relative; }
+    .crosshair-node::before, .crosshair-node::after {
+      content: '+'; position: absolute; font-family: var(--font-mono); color: var(--border-strong);
+      font-size: 1rem; pointer-events: none; line-height: 1; opacity: 0.5;
+    }
+    .crosshair-node::before { top: -20px; left: -20px; }
+    .crosshair-node::after { bottom: -20px; right: -20px; }
 
     /* =========================================================
-       04. NAVIGATION
+       04. NAVIGATION (Adaptive & Magnetic)
        ========================================================= */
     .nav-wrapper {
       position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
-      z-index: 100; width: 90%; max-width: 800px;
+      z-index: 100; width: 100%; max-width: 680px; padding: 0 20px;
+      transition: max-width var(--transition), top var(--transition);
     }
+    .nav-wrapper.scrolled { max-width: 580px; top: 16px; }
+    
     .navbar {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 24px;
+      padding: 10px 16px;
       background: var(--glass-bg);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--glass-border);
       border-radius: 100px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
     
-    .nav-logo { 
-      display: flex; align-items: center; justify-content: center; height: 28px; text-decoration: none;
-    }
-    .nav-logo img {
-      height: 100%; width: auto; object-fit: contain; transition: filter 0.3s;
-    }
-    [data-theme="dark"] .nav-logo img { filter: invert(1); }
-
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; position: relative; }
-    .nav-links a:hover { color: var(--text-primary); }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%) scaleX(0);
-      width: 100%; height: 2px; background: var(--accent); transition: transform 0.3s var(--ease-out-expo);
-      transform-origin: center;
-    }
-    .nav-links a:hover::after { transform: translateX(-50%) scaleX(1); }
+    .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; color: var(--text-primary); letter-spacing: -0.05em; padding: 0 8px; }
     
-    .nav-actions { display: flex; gap: 16px; align-items: center; }
-    .theme-btn {
-      background: transparent; border: none; color: var(--text-primary);
-      font-size: 1.1rem; padding: 8px; transition: transform 0.3s;
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a { 
+      font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); 
+      padding: 6px 14px; border-radius: 100px; transition: var(--transition);
     }
-    .theme-btn:hover { transform: rotate(15deg) scale(1.1); color: var(--accent); }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text-primary); background: var(--border-color); }
+    
+    .theme-btn { color: var(--text-secondary); font-size: 1rem; padding: 8px; transition: var(--transition); border-radius: 50%; }
+    .theme-btn:hover { color: var(--text-primary); transform: rotate(15deg); background: var(--border-color); }
 
     /* =========================================================
-       05. HERO SECTION
+       05. INTERACTION PRIMITIVES
        ========================================================= */
-    .hero {
-      position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;
-      text-align: center; padding-top: 80px; overflow: hidden;
-    }
-    
-    .hero-glow {
-      position: absolute;
-      width: 50vw; height: 50vw;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      z-index: 0; opacity: 0.6; filter: blur(100px); pointer-events: none;
-    }
-
-    .hero-content { position: relative; z-index: 2; max-width: 1000px; display: flex; flex-direction: column; align-items: center; }
-    
-    .status-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 16px; border-radius: 100px;
-      background: var(--bg-surface-elevated); border: 1px solid var(--border-color);
-      font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 32px; backdrop-filter: blur(10px);
-    }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); animation: pulse 2s infinite; }
-    
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--accent-glow); } 70% { box-shadow: 0 0 0 10px rgba(244,124,43,0); } 100% { box-shadow: 0 0 0 0 rgba(244,124,43,0); } }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 7.5rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 16px;
-      line-height: 1;
-      background: linear-gradient(180deg, var(--text-primary) 0%, rgba(255,255,255,0.4) 100%);
-      [data-theme="light"] & { background: linear-gradient(180deg, var(--text-primary) 0%, rgba(0,0,0,0.5) 100%); }
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      opacity: 0; /* Handled by GSAP on load */
-    }
-    
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 2vw, 1.8rem);
-      color: var(--text-secondary); font-weight: 400; max-width: 600px; margin-bottom: 48px;
-    }
-
-    .btn-group { display: flex; gap: 16px; justify-content: center; }
     .btn {
-      padding: 16px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem;
-      display: inline-flex; align-items: center; gap: 10px;
-      transition: all 0.3s var(--ease-out-expo); position: relative; overflow: hidden; border: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 28px; border-radius: 100px; font-size: 0.85rem; font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid transparent; 
+      letter-spacing: 0.02em; position: relative; overflow: hidden;
     }
-    .btn-primary {
-      background: var(--text-primary); color: var(--bg-base);
-      box-shadow: 0 0 30px rgba(255,255,255,0.1);
-    }
-    .btn-primary:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 10px 40px rgba(255,255,255,0.2); }
-    .btn-secondary {
-      background: var(--glass-bg); color: var(--text-primary);
-      border: 1px solid var(--border-color); backdrop-filter: blur(10px);
-    }
-    .btn-secondary:hover { border-color: var(--text-primary); transform: translateY(-4px) scale(1.02); }
-
-    .scroll-indicator {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary);
-      opacity: 0.6;
-    }
-    .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--text-secondary), transparent); }
-
-    /* =========================================================
-       06. SECTIONS & CARDS (Spotlight Effect)
-       ========================================================= */
-    section { padding: 120px 0; position: relative; overflow: hidden; }
-    section:nth-child(even) { background: rgba(128,128,128,0.02); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .btn-primary { background: var(--text-primary); color: var(--bg-base); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(255,255,255,0.1); background: var(--accent); color: #fff; }
+    [data-theme="light"] .btn-primary:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
     
-    .section-header { margin-bottom: 80px; position: relative; z-index: 2; }
-    .section-label { color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: block; }
-    .section-title { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+    .btn-secondary { background: var(--bg-surface); color: var(--text-primary); border-color: var(--border-strong); }
+    .btn-secondary:hover { border-color: var(--text-primary); background: var(--bg-surface-hover); transform: translateY(-2px); }
+
+    .link-animated { position: relative; color: var(--text-primary); font-weight: 500; }
+    .link-animated::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 1px;
+      background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--ease-out);
+    }
+    .link-animated:hover::after { transform: scaleX(1); transform-origin: left; }
 
     /* Spotlight Card Engine */
-    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); position: relative; z-index: 2;}
+    .spotlight-card {
+      position: relative; overflow: hidden; border-radius: var(--radius-lg);
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .spotlight-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), var(--border-strong), transparent 40%);
+      opacity: 0; transition: opacity 0.5s; pointer-events: none; z-index: 1;
+    }
+    .spotlight-card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .spotlight-card:hover::before { opacity: 1; }
+    .card-content { position: relative; z-index: 2; }
+
+    /* =========================================================
+       06. HERO: THE ESTABLISHING SHOT
+       ========================================================= */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      padding-top: 10vh; padding-bottom: 5vh;
+    }
+
+    .hero-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; width: 100%; }
     
-    .card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: border-color 0.5s, transform 0.5s var(--ease-out-expo);
+    .status-badge { 
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 32px; 
+      padding: 8px 16px; border: 1px solid var(--border-strong); border-radius: 100px; 
+      background: var(--bg-panel); backdrop-filter: blur(8px);
     }
-    .card::before {
-      content: ""; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: 1; opacity: 0;
-      background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--border-hover), transparent 40%);
-      transition: opacity 0.5s; pointer-events: none;
-    }
-    .card::after {
-      content: ""; height: calc(100% - 2px); width: calc(100% - 2px); position: absolute; left: 1px; top: 1px;
-      background: var(--bg-surface); border-radius: 23px; z-index: 2; pointer-events: none;
-    }
-    .card:hover::before { opacity: 1; }
-    .card:hover { transform: translateY(-8px); border-color: transparent; }
-    .card-content { position: relative; z-index: 3; display: flex; flex-direction: column; height: 100%; }
-
-    /* =========================================================
-       07. ABOUT & META
-       ========================================================= */
-    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; position: relative; z-index: 2;}
-    .about-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); font-weight: 400; }
-    .about-text p { margin-bottom: 24px; }
-    .about-text strong { color: var(--text-primary); font-weight: 500; }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); animation: pulse 2s infinite ease-in-out; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
     
-    .meta-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    .meta-item { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: 16px; backdrop-filter: blur(10px); }
-    .meta-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--glass-bg); display: grid; place-items: center; color: var(--accent); font-size: 1.2rem; border: 1px solid var(--border-color); }
-    .meta-info span { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 4px; }
-    .meta-info strong { font-size: 1.1rem; color: var(--text-primary); }
-
-    /* =========================================================
-       08. EXPERIENCE & TIMELINE
-       ========================================================= */
-    .timeline { position: relative; padding-left: 48px; z-index: 2; }
-    .timeline::before { content: ""; position: absolute; left: 24px; top: 0; bottom: 0; width: 1px; background: var(--border-color); }
-    .timeline-item { position: relative; margin-bottom: 64px; }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot { position: absolute; left: -48px; top: 0; width: 48px; height: 48px; display: grid; place-items: center; }
-    .timeline-dot::before { content: ""; width: 12px; height: 12px; background: var(--bg-base); border: 2px solid var(--accent); border-radius: 50%; position: relative; z-index: 2; transition: all 0.3s; }
-    .timeline-item:hover .timeline-dot::before { background: var(--accent); box-shadow: 0 0 15px var(--accent-glow); transform: scale(1.3); }
+    .hero h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); letter-spacing: -0.04em; margin-bottom: 24px; line-height: 1.05; }
+    .hero-subtitle { font-size: clamp(1.2rem, 2vw, 1.4rem); color: var(--text-secondary); margin-bottom: 48px; font-weight: 400; max-width: 540px; line-height: 1.5; }
     
-    .timeline-date { font-family: var(--font-display); color: var(--accent); font-weight: 700; margin-bottom: 8px; }
-    .timeline-role { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; margin-bottom: 4px; }
-    .timeline-org { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px; }
-    .timeline-desc li { position: relative; padding-left: 24px; margin-bottom: 12px; color: var(--text-secondary); font-size: 1.1rem; }
-    .timeline-desc li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-
-    /* =========================================================
-       09. PROJECTS
-       ========================================================= */
-    .project-card .icon-wrapper { font-size: 2rem; color: var(--text-primary); margin-bottom: 24px; }
-    .project-card h3 { font-size: 1.8rem; margin-bottom: 8px; }
-    .project-card .subtitle { color: var(--accent); font-size: 0.95rem; font-weight: 600; margin-bottom: 24px; }
-    .project-card p { color: var(--text-secondary); margin-bottom: 32px; flex-grow: 1; font-size: 1.1rem; }
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-    .tech-pill { padding: 8px 16px; background: var(--glass-bg); border: 1px solid var(--border-color); border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); backdrop-filter: blur(10px); }
-
-    /* =========================================================
-       10. SKILLS & COURSEWORK
-       ========================================================= */
-    .skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; position: relative; z-index: 2; }
-    .skill-category { background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: 24px; padding: 32px; backdrop-filter: blur(10px); }
-    .skill-category h4 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
-    .skill-category h4 i { color: var(--accent); }
-    .skill-items { display: flex; flex-wrap: wrap; gap: 12px; }
-    .skill-item {
-      padding: 10px 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px;
-      font-size: 0.95rem; font-weight: 500; color: var(--text-secondary);
-      transition: all 0.3s;
+    /* Technical HUD */
+    .hud-module {
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 24px; margin-bottom: 48px;
+      max-width: 480px; position: relative; overflow: hidden;
     }
-    .skill-item:hover { border-color: var(--accent); color: var(--text-primary); background: var(--accent-glow); transform: translateY(-3px); }
+    .hud-module::after { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--accent); }
+    .hud-title { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-bottom: 16px; letter-spacing: 0.1em; display: flex; justify-content: space-between; }
+    .hud-title span { color: var(--accent); }
+    .hud-list { display: flex; flex-direction: column; gap: 12px; }
+    .hud-list li { font-size: 0.9rem; color: var(--text-secondary); display: flex; gap: 12px; align-items: flex-start; }
+    .hud-list li::before { content: "›"; color: var(--text-primary); font-family: var(--font-mono); }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Cinematic Assembly Visual */
+    .hero-visual { position: relative; height: 500px; display: flex; align-items: center; justify-content: center; z-index: 1; perspective: 1200px; }
+    .wireframe-assembly { width: 320px; height: 320px; position: relative; transform-style: preserve-3d; animation: rotateAssembly 30s linear infinite; }
+    .wireframe-ring { position: absolute; inset: 0; border: 1px solid var(--border-strong); border-radius: 50%; }
+    .wireframe-ring:nth-child(1) { transform: rotateX(75deg); border-color: var(--accent); opacity: 0.4; border-style: dashed; }
+    .wireframe-ring:nth-child(2) { transform: rotateY(75deg); }
+    .wireframe-ring:nth-child(3) { transform: rotateZ(45deg) rotateX(45deg); opacity: 0.3; }
+    .wireframe-core { position: absolute; top: 25%; left: 25%; width: 50%; height: 50%; border: 1px solid var(--text-muted); opacity: 0.2; transform: translateZ(60px) rotate45deg; }
+    @keyframes rotateAssembly { 0% { transform: rotateX(15deg) rotateY(0deg); } 100% { transform: rotateX(15deg) rotateY(360deg); } }
 
     /* =========================================================
-       11. EDUCATION & ACHIEVEMENTS
+       07. STORYTELLING: THE ARCHITECTURE OF THOUGHT
        ========================================================= */
-    .edu-achieve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative; z-index: 2;}
-    .list-block { background: var(--bg-surface); padding: 48px; border-radius: 24px; border: 1px solid var(--border-color); }
-    .list-item { padding: 24px 0; border-bottom: 1px solid var(--border-color); }
-    .list-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .list-item:first-child { padding-top: 0; }
-    .list-item-title { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
-    .list-item-sub { color: var(--text-secondary); font-size: 1rem; }
-    .list-item-meta { margin-top: 8px; display: inline-block; font-size: 0.8rem; padding: 4px 12px; background: var(--glass-bg); border-radius: 100px; color: var(--accent); font-weight: 600; border: 1px solid var(--border-color); }
+    section { padding: 160px 0; position: relative; }
+    .section-header { margin-bottom: 80px; }
+    .section-num { font-family: var(--font-mono); color: var(--accent); font-size: 0.8rem; margin-bottom: 24px; display: block; letter-spacing: 0.1em; }
+    .section-title { font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 700px; line-height: 1.15; }
+
+    .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .philosophy-grid .text-body strong { color: var(--text-primary); font-weight: 500; }
+
+    /* Credibility Metrics */
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .metric-card { padding: 32px 24px; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface); display: flex; flex-direction: column; justify-content: space-between; }
+    .metric-value { font-family: var(--font-mono); font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; display: block; line-height: 1; }
+    .metric-label { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 
     /* =========================================================
-       12. CONTACT
+       08. PROOF OF CONCEPT (Case Studies)
        ========================================================= */
-    .contact-section { text-align: center; padding: 160px 0; }
-    .contact-title { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 24px; position: relative; z-index: 2;}
-    .contact-text { font-size: 1.2rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto 48px; position: relative; z-index: 2;}
+    .case-studies { display: flex; flex-direction: column; gap: 120px; }
     
-    .social-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 64px; position: relative; z-index: 2;}
-    .social-link {
-      width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--border-color); display: grid; place-items: center; background: var(--bg-surface);
-      font-size: 1.5rem; color: var(--text-primary); transition: all 0.4s var(--ease-out-expo);
+    /* Apple-Style Featured Case Study */
+    .cs-featured { display: grid; grid-template-columns: 1fr; gap: 0; }
+    
+    /* Engineering Placeholders */
+    .placeholder-window {
+      width: 100%; height: 500px; background: var(--bg-surface-hover); border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg); position: relative; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; margin-bottom: 48px;
     }
-    .social-link:hover { background: var(--text-primary); color: var(--bg-base); transform: scale(1.1); border-color: var(--text-primary); }
+    .placeholder-grid {
+      position: absolute; inset: 0; background-size: 40px 40px;
+      background-image: linear-gradient(to right, var(--border-strong) 1px, transparent 1px), linear-gradient(to bottom, var(--border-strong) 1px, transparent 1px);
+      opacity: 0.3; mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%); -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+    }
+    .placeholder-label {
+      position: relative; z-index: 2; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);
+      background: var(--bg-base); border: 1px solid var(--border-strong); padding: 12px 24px; border-radius: 100px; letter-spacing: 0.1em;
+    }
 
-    /* Form Design */
-    .contact-form { max-width: 600px; margin: 0 auto; text-align: left; background: var(--bg-surface-elevated); padding: 48px; border-radius: 24px; border: 1px solid var(--border-color); backdrop-filter: blur(10px); position: relative; z-index: 2; }
-    .input-group { position: relative; margin-bottom: 32px; }
-    .input-group input, .input-group textarea {
-      width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-color);
-      padding: 16px 0; font-family: var(--font-body); font-size: 1.1rem; color: var(--text-primary);
-      transition: border-color 0.3s; resize: none;
-    }
-    .input-group input:focus, .input-group textarea:focus { outline: none; border-color: var(--accent); }
-    .input-group label { position: absolute; left: 0; top: 16px; color: var(--text-secondary); pointer-events: none; transition: all 0.3s var(--ease-out-expo); }
-    .input-group input:focus ~ label, .input-group input:valid ~ label,
-    .input-group textarea:focus ~ label, .input-group textarea:valid ~ label { top: -12px; font-size: 0.8rem; color: var(--accent); font-weight: 600; }
-    .submit-btn { width: 100%; border-radius: 16px; justify-content: center; margin-top: 16px; font-size: 1.1rem; padding: 18px; }
+    .cs-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+    
+    .cs-meta-sticky { position: sticky; top: 120px; }
+    .cs-role { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 16px; display: block; }
+    .cs-title { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 24px; }
+    .cs-impact-list { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border-color); }
+    .impact-item { margin-bottom: 24px; }
+    .impact-data { display: block; font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 4px; }
+    .impact-desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+    /* Ultra-Detailed Methodology (Per User Request) */
+    .cs-methodology { display: flex; flex-direction: column; gap: 40px; }
+    .cs-methodology > p { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+    .method-step { position: relative; padding-left: 32px; }
+    .method-step::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .method-step::after { content: ""; position: absolute; left: 2px; top: 24px; bottom: -40px; width: 1px; background: var(--border-strong); }
+    .method-step:last-child::after { display: none; }
+    .method-step h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--text-primary); }
+    .method-step p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; }
+    
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .tech-tag { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); padding: 6px 12px; border: 1px solid var(--border-color); border-radius: 4px; }
+
+    /* Secondary Case Studies */
+    .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
+    .cs-card { display: flex; flex-direction: column; gap: 24px; }
+    .cs-card .placeholder-window { height: 320px; margin-bottom: 0; border-radius: var(--radius-md); }
+    .cs-card-title { font-size: 1.5rem; margin-bottom: 12px; }
+    .cs-card-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; flex-grow: 1; }
 
     /* =========================================================
-       13. FOOTER
+       09. VECTORS & VELOCITY (Experience Timeline)
        ========================================================= */
-    footer { padding: 40px 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-    .heart { color: var(--accent); display: inline-block; animation: beat 1s infinite; }
-    @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+    .trajectory-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+    .trajectory-intro { position: sticky; top: 120px; }
+    
+    .timeline { position: relative; }
+    .timeline-item { position: relative; padding-left: 48px; margin-bottom: 80px; }
+    .timeline-item::before { content: ""; position: absolute; left: 4px; top: 12px; bottom: -80px; width: 1px; background: var(--border-strong); }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-marker { position: absolute; left: 0; top: 8px; width: 9px; height: 9px; background: var(--bg-base); border: 2px solid var(--text-primary); border-radius: 50%; z-index: 2; transition: border-color var(--transition); }
+    .timeline-item:hover .timeline-marker { border-color: var(--accent); }
+    
+    .timeline-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+    .timeline-role { font-size: 1.4rem; color: var(--text-primary); margin-bottom: 4px; }
+    .timeline-org { font-size: 1.05rem; color: var(--text-muted); }
+    .timeline-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); }
+    
+    .timeline-content { background: var(--bg-surface); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-md); }
+    .timeline-content ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .timeline-content li { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; position: relative; padding-left: 20px; }
+    .timeline-content li::before { content: "›"; position: absolute; left: 0; top: 0; color: var(--text-muted); font-family: var(--font-mono); font-size: 1.2rem; line-height: 1.4; }
+    .timeline-content li strong { color: var(--text-primary); font-weight: 500; }
 
     /* =========================================================
-       14. RESPONSIVE DESIGN
+       10. THE TOOLKIT (Skills Taxonomy)
+       ========================================================= */
+    .taxonomy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .tax-category { border-top: 1px solid var(--border-strong); padding-top: 24px; }
+    .tax-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .tax-title { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary); }
+    .tax-icon { color: var(--text-muted); font-size: 1rem; }
+    
+    .tax-list { display: flex; flex-direction: column; gap: 16px; }
+    .tax-item { display: flex; flex-direction: column; gap: 4px; }
+    .tax-item-name { font-size: 1rem; color: var(--text-primary); font-weight: 500; }
+    .tax-item-context { font-size: 0.85rem; color: var(--text-secondary); }
+
+    /* =========================================================
+       11. END OF SCROLL (Contact)
+       ========================================================= */
+    .ending-section { 
+      padding: 160px 0; border-top: 1px solid var(--border-color);
+      background: linear-gradient(to bottom, transparent, var(--bg-surface));
+    }
+    .ending-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    
+    .ending-statement { font-size: clamp(2.5rem, 4vw, 4rem); letter-spacing: -0.04em; color: var(--text-primary); margin-bottom: 24px; line-height: 1.1; }
+    .ending-sub { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 40px; }
+    
+    .contact-form {
+      background: var(--bg-base); border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg); padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+    .form-group { margin-bottom: 24px; position: relative; }
+    .form-label { display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px; }
+    .form-input {
+      width: 100%; background: var(--bg-surface); border: 1px solid var(--border-color);
+      padding: 14px 16px; color: var(--text-primary); font-family: var(--font-sans); font-size: 1rem;
+      border-radius: var(--radius-sm); transition: var(--transition);
+    }
+    .form-input:focus { border-color: var(--accent); background: var(--bg-base); }
+    textarea.form-input { resize: vertical; min-height: 120px; }
+
+    footer { padding: 40px 0; border-top: 1px solid var(--border-color); }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { transition: color var(--transition); }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    /* =========================================================
+       12. RESPONSIVE REFINEMENT
        ========================================================= */
     @media (max-width: 900px) {
-      .about-layout, .edu-achieve-grid { grid-template-columns: 1fr; gap: 48px; }
-      .nav-links { display: none; } /* Simplified for mobile, relying on scroll */
-      .nav-wrapper { width: 95%; top: 16px; }
-      .hero { padding-top: 100px; }
-      .timeline-dot { width: 32px; height: 32px; left: -40px; }
-      .timeline { padding-left: 32px; }
-      .timeline::before { left: 16px; }
-      .contact-form { padding: 32px 24px; }
+      .hero-layout, .philosophy-grid, .cs-layout, .trajectory-layout, .ending-layout { grid-template-columns: 1fr; gap: 60px; }
+      .hero-visual { height: 300px; order: -1; }
+      .nav-links { display: none; }
+      .nav-wrapper { padding: 0 16px; }
+      .cs-meta-sticky, .trajectory-intro { position: static; }
+      .placeholder-window { height: 300px; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .timeline-header { flex-direction: column; gap: 8px; }
+      .footer-content { flex-direction: column; justify-content: center; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Layers -->
-  <div class="noise"></div>
-  <div class="grid-overlay"></div>
-  <div class="bg-mesh">
-    <div class="mesh-blob blob-1"></div>
-    <div class="mesh-blob blob-2"></div>
-    <div class="mesh-blob blob-3"></div>
-  </div>
+  <div class="blueprint-grid" aria-hidden="true"></div>
+  <div class="ambient-light" aria-hidden="true"></div>
 
-  <!-- Navigation -->
-  <div class="nav-wrapper" id="nav">
-    <nav class="navbar">
-      <a href="#home" class="nav-logo magnetic">
-        <!-- Robust image fallback ensures the site never looks broken if the file is missing -->
-        <img src="logo.png" alt="Siddhartha Shukla Logo" onerror="this.onerror=null; this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
-        <span id="logo-fallback" style="display: none; font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--text-primary);">SS.</span>
-      </a>
+  <header class="nav-wrapper" id="nav">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-logo magnetic" aria-label="Siddhartha Shukla Home">SS.</a>
       <div class="nav-links">
-        <a href="#about" class="magnetic">About</a>
-        <a href="#experience" class="magnetic">Experience</a>
-        <a href="#projects" class="magnetic">Projects</a>
-        <a href="#skills" class="magnetic">Skills</a>
+        <a href="#philosophy" class="magnetic">Philosophy</a>
+        <a href="#work" class="magnetic">Case Studies</a>
+        <a href="#experience" class="magnetic">Trajectory</a>
+        <a href="#toolkit" class="magnetic">Arsenal</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-btn magnetic" id="theme-toggle" aria-label="Toggle Theme">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-      </div>
+      <button class="theme-btn magnetic" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
     </nav>
-  </div>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-glow"></div>
-    <div class="container hero-content">
-      <div class="status-badge gs-reveal" data-delay="0.1">
-        <span class="status-dot"></span> Available for Internships
-      </div>
-      <h1 class="hero-title">Siddhartha Shukla</h1>
-      <p class="hero-subtitle gs-reveal" data-delay="0.4">Mechanical Engineer · CAD/CAM · Simulation <br><i class="fa-solid fa-location-dot" style="font-size:0.8em; margin-right:8px;"></i>Gorakhpur, India</p>
-      
-      <div class="btn-group gs-reveal" data-delay="0.6">
-        <a href="https://drive.google.com/file/d/1tJiiEfj-dlFdIysnGjgpnt0Y-y31gOmA/view" target="_blank" class="btn btn-primary magnetic">
-          View Resume <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        <a href="#contact" class="btn btn-secondary magnetic">
-          Contact Me
-        </a>
-      </div>
-    </div>
-    
-    <div class="scroll-indicator gs-reveal" data-delay="1">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="watermark">ABOUT ME</div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">01. About</span>
-        <h2 class="section-title split-text">Designing systems with precision & purpose.</h2>
-      </div>
-      
-      <div class="about-layout">
-        <div class="about-text gs-fade">
-          <p>I'm a pre-final year <strong>Mechanical Engineering</strong> student at MMMUT Gorakhpur with hands-on experience in CAD/CAM, simulation, and automotive engineering. My work spans designing high-performance mechanical systems, exploring UI/UX, and developing curiosity for machine learning.</p>
-          <p>Beyond academics, I'm active in SAE collegiate competitions and hold technical leadership roles — turning ideas into engineered solutions through teamwork, iteration, and a strong attention to detail.</p>
-        </div>
+  <main>
+    <section class="hero crosshair-node" id="home">
+      <div class="container hero-layout">
         
-        <div class="meta-grid">
-          <div class="meta-item gs-fade">
-            <div class="meta-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="meta-info">
-              <span>Studying</span>
-              <strong>B.Tech Mechanical · MMMUT</strong>
-            </div>
+        <div class="hero-content">
+          <div class="status-badge gs-reveal">
+            <span class="status-dot"></span>
+            <span class="mono text-muted">System Status: Open to 2026 Opportunities</span>
           </div>
-          <div class="meta-item gs-fade" style="transition-delay: 0.1s;">
-            <div class="meta-icon"><i class="fa-solid fa-gear"></i></div>
-            <div class="meta-info">
-              <span>Focus</span>
-              <strong>CAD/CAM, Simulation, Automotive</strong>
-            </div>
-          </div>
-          <div class="meta-item gs-fade" style="transition-delay: 0.2s;">
-            <div class="meta-icon"><i class="fa-solid fa-flag-checkered"></i></div>
-            <div class="meta-info">
-              <span>Currently</span>
-              <strong>SAE Supra · Team Malaviyans</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience">
-    <div class="watermark">EXPERIENCE</div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">02. Experience</span>
-        <h2 class="section-title split-text">Where I've engineered.</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item gs-fade">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Summer 2024</div>
-          <h3 class="timeline-role">Research Intern</h3>
-          <div class="timeline-org">Motilal Nehru National Institute of Technology (MNNIT), Allahabad</div>
-          <ul class="timeline-desc">
-            <li>Designed the steering knuckle upright geometry for an SAE Supra Formula-style racing car using SolidWorks.</li>
-            <li>Compared multiple materials for the knuckle to evaluate strength-to-weight performance under racing load conditions.</li>
-            <li>Performed topology optimization on the knuckle geometry to minimize mass while maintaining structural integrity — resulting in a lighter, more efficient component.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="watermark">PROJECTS</div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">03. Selected Work</span>
-        <h2 class="section-title split-text">Building the future.</h2>
-      </div>
-
-      <div class="cards-grid">
-        <!-- Project 1 -->
-        <div class="card project-card gs-slide">
-          <div class="card-content">
-            <div class="icon-wrapper"><i class="fa-solid fa-car-side"></i></div>
-            <h3>SAE Supra</h3>
-            <div class="subtitle">Steering System Engineer · Team Malaviyans</div>
-            <p>National-level competition to design, build, and race Formula-style cars. Responsible for design, analysis, and optimization of the steering system. Collaborated with cross-functional sub-teams on engineering design, fabrication, and business presentation.</p>
-            <div class="tech-stack">
-              <span class="tech-pill">SolidWorks</span>
-              <span class="tech-pill">Ansys</span>
-              <span class="tech-pill">Automotive</span>
-              <span class="tech-pill">CAD</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="card project-card gs-slide" style="transition-delay: 0.1s;">
-          <div class="card-content">
-            <div class="icon-wrapper"><i class="fa-solid fa-flask"></i></div>
-            <h3>Biodiesel Extractor</h3>
-            <div class="subtitle">Final Year Project (Ongoing)</div>
-            <p>Investigating production of biodiesel from chicken fat oil as a sustainable alternative fuel. Conducting performance and emission analysis to evaluate viability in internal combustion engines.</p>
-            <div class="tech-stack">
-              <span class="tech-pill">IC Engines</span>
-              <span class="tech-pill">MATLAB</span>
-              <span class="tech-pill">Sustainability</span>
-              <span class="tech-pill">Research</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills & Coursework Section -->
-  <section id="skills">
-    <div class="watermark">ARSENAL</div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">04. Arsenal</span>
-        <h2 class="section-title split-text">Tools & Capabilities.</h2>
-      </div>
-
-      <div class="skills-wrapper">
-        <div class="skill-category gs-fade">
-          <h4><i class="fa-solid fa-cube"></i> CAD & Simulation</h4>
-          <div class="skill-items">
-            <span class="skill-item">AutoCAD</span>
-            <span class="skill-item">SolidWorks</span>
-            <span class="skill-item">Ansys</span>
-            <span class="skill-item">MATLAB</span>
-          </div>
-        </div>
-        
-        <div class="skill-category gs-fade" style="transition-delay: 0.1s;">
-          <h4><i class="fa-solid fa-pen-ruler"></i> Design & Productivity</h4>
-          <div class="skill-items">
-            <span class="skill-item">MS Word</span>
-            <span class="skill-item">Excel</span>
-            <span class="skill-item">PowerPoint</span>
-            <span class="skill-item">Canva</span>
-            <span class="skill-item">Adobe Photoshop</span>
-            <span class="skill-item">Figma</span>
-          </div>
-        </div>
-        
-        <div class="skill-category gs-fade" style="transition-delay: 0.2s;">
-          <h4><i class="fa-solid fa-microchip"></i> Domain Knowledge</h4>
-          <div class="skill-items">
-            <span class="skill-item">CAD/CAM</span>
-            <span class="skill-item">UX/UI</span>
-            <span class="skill-item">Machine Learning</span>
-            <span class="skill-item">Simulation Software</span>
-          </div>
-        </div>
-
-        <div class="skill-category gs-fade" style="transition-delay: 0.3s;">
-          <h4><i class="fa-solid fa-book-open"></i> Core Coursework</h4>
-          <div class="skill-items">
-            <span class="skill-item">Manufacturing Science</span>
-            <span class="skill-item">Additive Manufacturing</span>
-            <span class="skill-item">Engineering Mechanics</span>
-            <span class="skill-item">Strength of Materials</span>
-            <span class="skill-item">IC Engines</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education & Leadership Layout -->
-  <section id="education">
-    <div class="watermark">ACADEMICS</div>
-    <div class="container">
-      <div class="edu-achieve-grid">
-        <!-- Education -->
-        <div class="list-block gs-fade">
-          <span class="section-label" style="margin-bottom:32px;">05. Education</span>
           
-          <div class="list-item">
-            <div class="list-item-title">B.Tech Mechanical Engineering</div>
-            <div class="list-item-sub">MMMUT, Gorakhpur</div>
-            <div class="list-item-meta">2023 - 2027</div>
+          <h1 class="split-text">Siddhartha Shukla</h1>
+          <p class="hero-subtitle gs-reveal">
+            Engineering resilient hardware. Designing intuitive software. Bridging the gap between physical systems and human interaction.
+          </p>
+
+          <div class="hud-module gs-reveal">
+            <div class="hud-title">ACTIVE_COMPUTATION <span>[03]</span></div>
+            <ul class="hud-list">
+              <li>Optimizing steering kinematics for SAE Supra Formula-style vehicle.</li>
+              <li>Researching Biodiesel IC Engine performance metrics via MATLAB.</li>
+              <li>Exploring Generative AI to accelerate UI/UX prototyping.</li>
+            </ul>
           </div>
-          <div class="list-item">
-            <div class="list-item-title">Class XII — CBSE</div>
-            <div class="list-item-sub">Air Force School</div>
-            <div class="list-item-meta">2022</div>
-          </div>
-          <div class="list-item">
-            <div class="list-item-title">Class X — CBSE</div>
-            <div class="list-item-sub">Air Force School</div>
-            <div class="list-item-meta">2020</div>
+
+          <div class="hero-actions gs-reveal">
+            <a href="https://drive.google.com/file/d/1tJiiEfj-dlFdIysnGjgpnt0Y-y31gOmA/view" target="_blank" rel="noopener" class="btn btn-primary magnetic" aria-label="View Engineering Resume PDF">
+              View Resume
+            </a>
+            <a href="#work" class="btn btn-secondary magnetic">
+              Explore Work
+            </a>
           </div>
         </div>
 
-        <!-- Leadership & Achievements -->
-        <div class="list-block gs-fade" style="transition-delay: 0.1s;">
-          <span class="section-label" style="margin-bottom:32px;">06. Leadership & Awards</span>
+        <div class="hero-visual gs-reveal" aria-hidden="true">
+          <div class="wireframe-assembly">
+            <div class="wireframe-ring"></div>
+            <div class="wireframe-ring"></div>
+            <div class="wireframe-ring"></div>
+            <div class="wireframe-core"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="philosophy" class="crosshair-node">
+      <div class="container">
+        <div class="section-header gs-fade">
+          <span class="section-num">01 // THE ARCHITECTURE OF THOUGHT</span>
+          <h2 class="section-title">Systems don't exist in a vacuum.</h2>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="text-body gs-fade">
+            <p>I believe the most impactful products are built at the intersection of mechanical reliability and human empathy. Currently completing my B.Tech in Mechanical Engineering at <strong>MMMUT Gorakhpur</strong>, my foundational thinking is deeply rooted in CAD, fluid dynamics, and stress analysis.</p>
+            
+            <p>But hardware is only half the equation. The other half is how a human actually interacts with the machine. This realization drove my transition into <strong>UI/UX Design</strong> and my active exploration of <strong>Generative AI</strong>. By understanding both the physical constraints of manufacturing and the cognitive models of software users, I approach engineering holistically.</p>
+            
+            <p>Whether I am stripping unsprung mass from a steering knuckle, architecting a high-fidelity Figma prototype, or orchestrating an international engineering conference, my objective remains identical: <strong>eliminate friction, optimize performance, and iterate relentlessly based on data.</strong></p>
+          </div>
+
+          <div class="metrics-grid gs-fade">
+            <div class="metric-card spotlight-card">
+              <div class="card-content">
+                <span class="metric-value">33</span>
+                <span class="metric-label">All India Rank secured in SAE Supra '25 out of hundreds of collegiate teams.</span>
+              </div>
+            </div>
+            <div class="metric-card spotlight-card">
+              <div class="card-content">
+                <span class="metric-value">40+</span>
+                <span class="metric-label">Topology optimization iterations conducted during MNNIT research internship.</span>
+              </div>
+            </div>
+            <div class="metric-card spotlight-card">
+              <div class="card-content">
+                <span class="metric-value">03</span>
+                <span class="metric-label">Years of technical leadership across T&P Cell and international conferences.</span>
+              </div>
+            </div>
+            <div class="metric-card spotlight-card">
+              <div class="card-content">
+                <span class="metric-value">A1</span>
+                <span class="metric-label">Proficiency in German, expanding technical communication capabilities.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="crosshair-node">
+      <div class="container">
+        <div class="section-header gs-fade">
+          <span class="section-num">02 // PROOF OF CONCEPT</span>
+          <h2 class="section-title">From raw physics to refined interfaces.</h2>
+        </div>
+
+        <div class="case-studies">
           
-          <div class="list-item">
-            <div class="list-item-title">All India Rank 33</div>
-            <div class="list-item-sub">SAE Supra 2025 under Team Malaviyans</div>
+          <article class="cs-featured gs-fade">
+            <div class="placeholder-window">
+              <div class="placeholder-grid"></div>
+              <div class="placeholder-label">[ SOLIDWORKS RENDER: 7075-T6 KNUCKLE ASSEMBLY ISOMETRIC ]</div>
+            </div>
+            
+            <div class="cs-layout">
+              <div class="cs-meta-sticky">
+                <span class="cs-role">STEERING SYSTEM ENGINEER // TEAM MALAVIYANS</span>
+                <h3 class="cs-title">Dynamic Steering Optimization: SAE Supra</h3>
+                <p class="text-body" style="font-size: 1.05rem;">Engineered the steering upright geometry to handle extreme cornering forces without catastrophic failure, strictly adhering to SAE rulebook constraints to improve track lap times.</p>
+                
+                <div class="cs-impact-list">
+                  <div class="impact-item">
+                    <span class="impact-data">18%</span>
+                    <span class="impact-desc">Reduction in unsprung mass via generative design.</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-data">2.5</span>
+                    <span class="impact-desc">Verified Factor of Safety under peak dynamic load.</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-data">1.4G</span>
+                    <span class="impact-desc">Peak lateral acceleration sustained during simulation.</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="cs-methodology">
+                <p>The core challenge was striking the perfect balance between shedding weight to enhance vehicle agility and ensuring absolute structural rigidity under race conditions. A failure in the steering knuckle at 100km/h is not an option.</p>
+                
+                <div class="method-step">
+                  <h4>1. Kinematic & Load Analysis</h4>
+                  <p>Calculated maximum braking, cornering, and bump forces using longitudinal and lateral weight transfer equations to establish a baseline worst-case load scenario. This mathematical foundation dictated all subsequent CAD decisions.</p>
+                </div>
+                <div class="method-step">
+                  <h4>2. Material Selection Trade-off</h4>
+                  <p>Conducted a comparative analysis between Aluminum 7075-T6 and 6061-T6. Selected 7075-T6 for its vastly superior yield strength (503 MPa), justifying the manufacturing cost premium through vital weight savings.</p>
+                </div>
+                <div class="method-step">
+                  <h4>3. Topology Optimization (ANSYS)</h4>
+                  <p>Utilized ANSYS generative design modules to identify and remove non-load-bearing material. I ran 12 specific iterations, observing the stress paths and refining the CAD geometry until we achieved a structure that reduced mass by 18%.</p>
+                </div>
+                <div class="method-step">
+                  <h4>4. FEA Validation & Tolerancing</h4>
+                  <p>Validated the final optimized SolidWorks model using Static Structural analysis in ANSYS. Ensured Von Mises stresses remained well below the yield point, finalizing the manufacturing drawings with tight geometric dimensioning and tolerancing (GD&T) for the CNC machining phase.</p>
+                </div>
+                
+                <div class="tech-stack">
+                  <span class="tech-tag">SolidWorks</span>
+                  <span class="tech-tag">ANSYS Static Structural</span>
+                  <span class="tech-tag">Topology Optimization</span>
+                  <span class="tech-tag">Vehicle Dynamics</span>
+                  <span class="tech-tag">GD&T</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="cs-grid">
+            <article class="cs-card spotlight-card gs-fade">
+              <div class="card-content" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="placeholder-window">
+                  <div class="placeholder-grid"></div>
+                  <div class="placeholder-label">[ MATLAB PLOT: BRAKE THERMAL EFFICIENCY VS LOAD ]</div>
+                </div>
+                <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column;">
+                  <span class="mono text-muted" style="margin-bottom: 12px; display:block;">FINAL YEAR RESEARCH</span>
+                  <h3 class="cs-card-title">Biodiesel Extraction & Performance Analysis</h3>
+                  <p class="cs-card-desc">Investigated the viability of chicken fat oil as a sustainable alternative fuel. Conducted transesterification processes and mapped specific fuel consumption, brake thermal efficiency, and exhaust emission data across 5 distinct load conditions against standard diesel in an IC Engine setup.</p>
+                  <div class="tech-stack" style="margin-top: auto; padding-top: 24px;">
+                    <span class="tech-tag">IC Engines</span>
+                    <span class="tech-tag">Thermodynamics</span>
+                    <span class="tech-tag">MATLAB</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="cs-card spotlight-card gs-fade">
+              <div class="card-content" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="placeholder-window">
+                  <div class="placeholder-grid"></div>
+                  <div class="placeholder-label">[ FIGMA: HIGH-FIDELITY WIREFLOW & DESIGN SYSTEM ]</div>
+                </div>
+                <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column;">
+                  <span class="mono text-muted" style="margin-bottom: 12px; display:block;">UI/UX DESIGN & AI</span>
+                  <h3 class="cs-card-title">Digital Interface Architecture</h3>
+                  <p class="cs-card-desc">Developed a comprehensive UX case study culminating in a high-fidelity prototype. Established a modular component library and utilized Generative AI to rapidly iterate on visual assets, demonstrating how AI can compress the ideation-to-prototype timeline.</p>
+                  <div class="tech-stack" style="margin-top: auto; padding-top: 24px;">
+                    <span class="tech-tag">Figma</span>
+                    <span class="tech-tag">User Research</span>
+                    <span class="tech-tag">Gen AI Prompting</span>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
-          <div class="list-item">
-            <div class="list-item-title">Student Sponsorship & Alumni Chair</div>
-            <div class="list-item-sub">SAE Collegiate Club, MMMUT Chapter</div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="crosshair-node">
+      <div class="container">
+        <div class="section-header gs-fade">
+          <span class="section-num">03 // VECTORS & VELOCITY</span>
+          <h2 class="section-title">Where I've applied leverage.</h2>
+        </div>
+
+        <div class="trajectory-layout">
+          <div class="trajectory-intro gs-fade">
+            <p class="text-body">Experience is not just time spent; it is problems solved. From academic research to leading collegiate operational teams, I focus on environments where complex variables require structured engineering logic.</p>
           </div>
-          <div class="list-item">
-            <div class="list-item-title">Event Coordinator</div>
-            <div class="list-item-sub">Intl. Conference on Advanced Design & T&P Cell Coordinator</div>
-          </div>
-          <div class="list-item">
-            <div class="list-item-title">Silver Medal</div>
-            <div class="list-item-sub">International Mathematics Olympiad</div>
+          
+          <div class="timeline">
+            <article class="timeline-item gs-fade">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Research Intern</h3>
+                    <div class="timeline-org">Motilal Nehru National Institute of Technology (MNNIT)</div>
+                  </div>
+                  <span class="timeline-date">SUMMER 2024</span>
+                </div>
+                <ul>
+                  <li><strong>Engineered CAD geometry</strong> for high-stress automotive components utilizing SolidWorks, strictly adhering to manufacturing constraints.</li>
+                  <li><strong>Executed 40+ topology optimization studies</strong> in ANSYS, identifying redundant material structures under simulated race loads.</li>
+                  <li><strong>Presented structural findings</strong> to senior faculty, effectively bridging the gap between theoretical calculations and manufacturable designs.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item gs-fade">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Student Coordinator & Alumni Chair</h3>
+                    <div class="timeline-org">Training & Placement Cell & SAE Club (MMMUT)</div>
+                  </div>
+                  <span class="timeline-date">2023 — PRESENT</span>
+                </div>
+                <ul>
+                  <li><strong>Facilitated university-level technical events</strong> including TechSrijan and Offroad Burnout, coordinating logistics for hundreds of student participants.</li>
+                  <li><strong>Secured critical sponsorships</strong> and maintained active dialogue with engineering alumni networks to fund advanced collegiate club hardware projects.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item gs-fade">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Conference Organizer</h3>
+                    <div class="timeline-org">ICADMSES 2026</div>
+                  </div>
+                  <span class="timeline-date">UPCOMING 2026</span>
+                </div>
+                <ul>
+                  <li><strong>Managing operational logistics</strong> for the International Conference on Advanced Design, Manufacturing and Sustainable Energy Systems.</li>
+                  <li><strong>Led professional branding initiatives</strong>, overseeing the design, iteration, and deployment of the official conference brochure and academic logo.</li>
+                </ul>
+              </div>
+            </article>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <h2 class="contact-title split-text">Let's build together.</h2>
-      <p class="contact-text gs-reveal">Open to internships, research collaborations, and engineering discussions. Drop a message.</p>
+    <section id="toolkit" class="crosshair-node">
+      <div class="container">
+        <div class="section-header gs-fade">
+          <span class="section-num">04 // THE TOOLKIT</span>
+          <h2 class="section-title">Frameworks, physics, and pixels.</h2>
+        </div>
 
-      <div class="social-links gs-reveal">
-        <a href="mailto:siddhartha.shukla0401@gmail.com" class="social-link magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/siddhartha0401/" target="_blank" class="social-link magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="tel:+916387330339" class="social-link magnetic" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        <div class="taxonomy-grid">
+          <div class="tax-category gs-fade">
+            <div class="tax-header">
+              <span class="tax-title">HARDWARE & PHYSICS</span>
+              <i class="fa-solid fa-gear tax-icon" aria-hidden="true"></i>
+            </div>
+            <div class="tax-list">
+              <div class="tax-item">
+                <span class="tax-item-name">SolidWorks & AutoCAD</span>
+                <span class="tax-item-context">3D Parametric Modeling, GD&T, Drafting</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">ANSYS</span>
+                <span class="tax-item-context">FEA, Static Structural, Topology Optimization</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">Core Engineering</span>
+                <span class="tax-item-context">Machine Design, Thermodynamics, IC Engines</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tax-category gs-fade">
+            <div class="tax-header">
+              <span class="tax-title">SOFTWARE & INTERFACES</span>
+              <i class="fa-solid fa-pen-nib tax-icon" aria-hidden="true"></i>
+            </div>
+            <div class="tax-list">
+              <div class="tax-item">
+                <span class="tax-item-name">Figma</span>
+                <span class="tax-item-context">High-Fidelity Wireframing, Auto Layout, Components</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">User Experience (UX)</span>
+                <span class="tax-item-context">Information Architecture, User Flows, Prototyping</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">Adobe Creative Suite</span>
+                <span class="tax-item-context">Photoshop, Visual Asset Production</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tax-category gs-fade">
+            <div class="tax-header">
+              <span class="tax-title">COMPUTATION & AI</span>
+              <i class="fa-solid fa-microchip tax-icon" aria-hidden="true"></i>
+            </div>
+            <div class="tax-list">
+              <div class="tax-item">
+                <span class="tax-item-name">MATLAB</span>
+                <span class="tax-item-context">Data Plotting, Engine Performance Analysis</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">Generative AI</span>
+                <span class="tax-item-context">Advanced Prompt Engineering, Workflow Automation</span>
+              </div>
+              <div class="tax-item">
+                <span class="tax-item-name">Cinematic Output</span>
+                <span class="tax-item-context">AI Video/Image Upscaling, Lighting Directives</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <form class="contact-form gs-reveal" id="contactForm">
-        <!-- Anti-spam honeypot -->
-        <input type="text" name="_honey" style="display:none">
-        
-        <div class="input-group">
-          <input type="text" id="name" name="name" required>
-          <label for="name">Your Name</label>
+    <section class="ending-section">
+      <div class="container ending-layout">
+        <div class="ending-copy gs-fade">
+          <h2 class="ending-statement">End of the scroll.<br>Beginning of the project.</h2>
+          <p class="ending-sub">I am currently exploring mechanical engineering internships and UX design opportunities for 2026. If you are building complex systems that require structured thinking, let's talk.</p>
         </div>
-        <div class="input-group">
-          <input type="email" id="email" name="email" required>
-          <label for="email">Email Address</label>
-        </div>
-        <div class="input-group">
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <label for="message">Your Message</label>
-        </div>
-        <button type="submit" class="btn btn-primary submit-btn magnetic" id="submitBtn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-      </form>
-    </div>
-  </section>
 
-  <!-- Footer -->
+        <div class="contact-form spotlight-card gs-fade">
+          <div class="card-content">
+            <form id="contactForm">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+              
+              <div class="form-group">
+                <label for="name" class="form-label">IDENTIFICATION [NAME]</label>
+                <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">ROUTING [EMAIL]</label>
+                <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">PAYLOAD [MESSAGE]</label>
+                <textarea id="message" name="message" class="form-input" required aria-required="true"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary magnetic" id="submitBtn" style="width: 100%;">
+                Transmit Data <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Siddhartha Shukla. Engineered with <span class="heart">♥</span> in India.</p>
+    <div class="container footer-content">
+      <div>SYSTEM STATUS: ONLINE // © <span id="year"></span> SIDDHARTHA SHUKLA</div>
+      <div class="footer-links">
+        <a href="mailto:siddhartha.shukla0401@gmail.com" class="link-animated" aria-label="Send an Email">EMAIL</a>
+        <a href="https://www.linkedin.com/in/siddhartha0401/" target="_blank" rel="noopener noreferrer" class="link-animated" aria-label="Visit LinkedIn Profile">LINKEDIN</a>
+        <a href="tel:+916387330339" class="link-animated" aria-label="Call via Phone">PHONE</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
@@ -742,18 +860,16 @@
 
   <script>
     /* =========================================================
-       INIT & SETUP
+       01. SMOOTH SCROLL (LENIS)
        ========================================================= */
     gsap.registerPlugin(ScrollTrigger);
 
-    // Smooth Scrolling (Lenis)
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
       smoothTouch: false,
     });
 
@@ -762,25 +878,24 @@
     gsap.ticker.lagSmoothing(0);
 
     /* =========================================================
-       MICRO-INTERACTIONS
+       02. MAGNETIC INTERACTION PRIMITIVE
        ========================================================= */
-    
-    // Magnetic Buttons & Elements
-    const magnetics = document.querySelectorAll('.magnetic');
-    magnetics.forEach((elem) => {
+    document.querySelectorAll('.magnetic').forEach(elem => {
       elem.addEventListener('mousemove', (e) => {
         const rect = elem.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(elem, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+        gsap.to(elem, { x, y, duration: 0.4, ease: "power2.out" });
       });
       elem.addEventListener('mouseleave', () => {
         gsap.to(elem, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" });
       });
     });
 
-    // Card Spotlight Engine
-    document.querySelectorAll('.card').forEach(card => {
+    /* =========================================================
+       03. SPOTLIGHT CARD ENGINE
+       ========================================================= */
+    document.querySelectorAll('.spotlight-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -791,60 +906,43 @@
     });
 
     /* =========================================================
-       ANIMATIONS & SCROLL TRIGGER
+       04. GSAP SCROLL ANIMATIONS
        ========================================================= */
-
-    // Navbar collapse on scroll
+    // Adaptive Navbar
     ScrollTrigger.create({
       start: 'top -80',
       end: 99999,
-      toggleClass: {className: 'scrolled', targets: '.navbar'}
+      toggleClass: {className: 'scrolled', targets: '.nav-wrapper'}
     });
 
-    // Hero Init Sequence (Safe animation for h1 to avoid clipping issues)
-    const heroTimeline = gsap.timeline();
-    heroTimeline.fromTo('.bg-mesh', {opacity: 0, scale: 1.2}, {opacity: 1, scale: 1, duration: 2, ease: "power2.out"})
-                .fromTo('.hero-title', {opacity: 0, y: 30}, {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=1.5")
-                .fromTo('.gs-reveal', {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out"}, "-=1.2");
-
-    // Text Reveal (SplitType for regular section titles)
+    // Cinematic Typography Reveal
     const splitTypes = document.querySelectorAll('.split-text');
     splitTypes.forEach((char) => {
       const text = new SplitType(char, { types: 'chars, words' });
       gsap.from(text.chars, {
-        scrollTrigger: {
-          trigger: char,
-          start: 'top 85%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 40,
-        rotateX: -90,
-        stagger: 0.02,
-        duration: 0.8,
-        ease: "power3.out"
+        scrollTrigger: { trigger: char, start: 'top 90%', toggleActions: 'play none none none' },
+        opacity: 0, y: 15, stagger: 0.015, duration: 0.8, ease: "power3.out"
       });
     });
 
-    // Standard Fade Elements
+    // Staggered Hero Elements
+    gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 1, delay: i * 0.1, ease: "power3.out" }
+      );
+    });
+
+    // Scroll Fade Elements
     gsap.utils.toArray('.gs-fade').forEach(el => {
-      gsap.from(el, {
-        scrollTrigger: { trigger: el, start: "top 85%" },
-        opacity: 0, y: 30, duration: 1, ease: "power3.out"
-      });
-    });
-
-    // Card Slides
-    gsap.utils.toArray('.gs-slide').forEach(el => {
-      gsap.from(el, {
-        scrollTrigger: { trigger: el, start: "top 85%" },
-        opacity: 0, y: 60, duration: 1, ease: "expo.out"
-      });
+      gsap.fromTo(el,
+        { opacity: 0, y: 30 },
+        { scrollTrigger: { trigger: el, start: "top 85%" }, opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      );
     });
 
     /* =========================================================
-       THEME TOGGLE
+       05. THEME TOGGLE SYSTEM
        ========================================================= */
     const themeBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
@@ -855,68 +953,48 @@
       root.setAttribute('data-theme', isDark ? 'light' : 'dark');
       icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
       
-      // Animate background color change smoothly
       gsap.to('body', {
         backgroundColor: getComputedStyle(root).getPropertyValue('--bg-base'),
         color: getComputedStyle(root).getPropertyValue('--text-primary'),
         duration: 0.5
       });
     };
-
     themeBtn.addEventListener('click', toggleTheme);
 
     /* =========================================================
-       SEAMLESS AJAX CONTACT FORM
+       06. AJAX CONTACT FORM HANDLING
        ========================================================= */
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
       const form = e.target;
       const btn = document.getElementById('submitBtn');
       const originalText = btn.innerHTML;
       
-      // Loading state
-      btn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
-      btn.style.opacity = '0.8';
+      btn.innerHTML = 'Transmitting... <i class="fa-solid fa-spinner fa-spin"></i>';
+      btn.style.opacity = '0.7';
 
       fetch('https://formsubmit.co/ajax/siddhartha.shukla0401@gmail.com', {
           method: "POST",
-          headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-              name: form.name.value,
-              email: form.email.value,
-              message: form.message.value,
+              name: form.name.value, 
+              email: form.email.value, 
+              message: form.message.value, 
               _subject: "New Portfolio Inquiry"
           })
       })
       .then(response => response.json())
       .then(data => {
-          // Success State
-          btn.innerHTML = 'Message Sent! <i class="fa-solid fa-check"></i>';
-          btn.style.background = '#2e8b57'; // Success green
+          btn.innerHTML = 'Transmission Successful <i class="fa-solid fa-check"></i>';
+          btn.style.background = 'var(--accent)';
           btn.style.color = '#fff';
           btn.style.opacity = '1';
           form.reset();
-          
-          // Revert button after 4 seconds
-          setTimeout(() => {
-              btn.innerHTML = originalText;
-              btn.style.background = '';
-              btn.style.color = '';
-          }, 4000);
+          setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.style.color = ''; }, 4000);
       })
       .catch(error => {
-          // Error State
-          btn.innerHTML = 'Error! Try again. <i class="fa-solid fa-triangle-exclamation"></i>';
-          btn.style.background = '#d9534f';
-          
-          setTimeout(() => {
-              btn.innerHTML = originalText;
-              btn.style.background = '';
-          }, 3000);
+          btn.innerHTML = 'Transmission Failed. Retry. <i class="fa-solid fa-triangle-exclamation"></i>';
+          setTimeout(() => { btn.innerHTML = originalText; btn.style.opacity = '1'; }, 3000);
       });
     });
 
