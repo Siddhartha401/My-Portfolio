@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Siddhartha Shukla | Engineer & Designer</title>
   
+  <!-- SEO & Open Graph -->
   <meta name="description" content="Portfolio of Siddhartha Shukla — Mechanical Engineer, UI/UX Designer, and Systems Thinker. Specializing in high-performance hardware and intuitive software.">
   <meta name="keywords" content="Mechanical Engineer, UX Designer, CAD, SolidWorks, Figma, MMMUT, MNNIT, SAE Supra, Systems Architecture">
   <meta name="author" content="Siddhartha Shukla">
@@ -12,6 +13,7 @@
   <meta property="og:description" content="Engineering resilient hardware. Designing intuitive software. Bridging the gap between physical systems and human interaction.">
   <meta property="og:type" content="website">
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,6 +28,7 @@
   }
   </script>
 
+  <!-- Fonts: Inter (Precision) & JetBrains Mono (Engineering/Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -188,7 +191,10 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
     
-    .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; color: var(--text-primary); letter-spacing: -0.05em; padding: 0 8px; }
+    .nav-logo { display: flex; align-items: center; justify-content: center; height: 20px; text-decoration: none; padding: 0 8px; }
+    .nav-logo img { height: 100%; width: auto; object-fit: contain; transition: filter var(--transition); }
+    [data-theme="dark"] .nav-logo img { filter: invert(1); }
+    #logo-fallback { font-family: var(--font-mono); font-weight: 700; font-size: 1rem; color: var(--text-primary); letter-spacing: -0.05em; }
     
     .nav-links { display: flex; gap: 4px; }
     .nav-links a { 
@@ -335,7 +341,7 @@
     .impact-data { display: block; font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 4px; }
     .impact-desc { font-size: 0.85rem; color: var(--text-secondary); }
 
-    /* Ultra-Detailed Methodology (Per User Request) */
+    /* Ultra-Detailed Methodology */
     .cs-methodology { display: flex; flex-direction: column; gap: 40px; }
     .cs-methodology > p { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
     .method-step { position: relative; padding-left: 32px; }
@@ -443,12 +449,17 @@
 </head>
 <body>
 
+  <!-- Motifs -->
   <div class="blueprint-grid" aria-hidden="true"></div>
   <div class="ambient-light" aria-hidden="true"></div>
 
+  <!-- Navigation -->
   <header class="nav-wrapper" id="nav">
     <nav class="navbar" aria-label="Main Navigation">
-      <a href="#home" class="nav-logo magnetic" aria-label="Siddhartha Shukla Home">SS.</a>
+      <a href="#home" class="nav-logo magnetic" aria-label="Siddhartha Shukla Home">
+        <img src="logo.png" alt="Siddhartha Shukla Logo" onerror="this.onerror=null; this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+        <span id="logo-fallback" style="display: none;">SS.</span>
+      </a>
       <div class="nav-links">
         <a href="#philosophy" class="magnetic">Philosophy</a>
         <a href="#work" class="magnetic">Case Studies</a>
@@ -462,6 +473,7 @@
   </header>
 
   <main>
+    <!-- 01. Signature Hero -->
     <section class="hero crosshair-node" id="home">
       <div class="container hero-layout">
         
@@ -495,6 +507,7 @@
           </div>
         </div>
 
+        <!-- Cinematic Rotating Wireframe -->
         <div class="hero-visual gs-reveal" aria-hidden="true">
           <div class="wireframe-assembly">
             <div class="wireframe-ring"></div>
@@ -507,6 +520,7 @@
       </div>
     </section>
 
+    <!-- 02. Philosophy & Identity -->
     <section id="philosophy" class="crosshair-node">
       <div class="container">
         <div class="section-header gs-fade">
@@ -553,6 +567,7 @@
       </div>
     </section>
 
+    <!-- 03. Case Studies -->
     <section id="work" class="crosshair-node">
       <div class="container">
         <div class="section-header gs-fade">
@@ -562,6 +577,7 @@
 
         <div class="case-studies">
           
+          <!-- Featured Project: Ultra-detailed methodology per user requirement -->
           <article class="cs-featured gs-fade">
             <div class="placeholder-window">
               <div class="placeholder-grid"></div>
@@ -621,6 +637,7 @@
             </div>
           </article>
 
+          <!-- Secondary Case Studies -->
           <div class="cs-grid">
             <article class="cs-card spotlight-card gs-fade">
               <div class="card-content" style="display: flex; flex-direction: column; height: 100%;">
@@ -665,6 +682,7 @@
       </div>
     </section>
 
+    <!-- 04. Experience -->
     <section id="experience" class="crosshair-node">
       <div class="container">
         <div class="section-header gs-fade">
@@ -734,6 +752,7 @@
       </div>
     </section>
 
+    <!-- 05. Taxonomy -->
     <section id="toolkit" class="crosshair-node">
       <div class="container">
         <div class="section-header gs-fade">
@@ -808,6 +827,7 @@
       </div>
     </section>
 
+    <!-- 06. Memorable Ending -->
     <section class="ending-section">
       <div class="container ending-layout">
         <div class="ending-copy gs-fade">
@@ -842,6 +862,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container footer-content">
       <div>SYSTEM STATUS: ONLINE // © <span id="year"></span> SIDDHARTHA SHUKLA</div>
@@ -853,6 +874,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
